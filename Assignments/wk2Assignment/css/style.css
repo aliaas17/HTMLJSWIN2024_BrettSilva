@@ -1,0 +1,30 @@
+h1{
+    color: black;
+    text-decoration: underline;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.nav-list{
+    list-style: none;
+    display: inline;
+    text-align: center;
+    padding: 15px;
+}
+
+#nav{
+    text-align: center;
+    display: inline;
+    border: 1px solid green;
+}
+ #header{
+    border: 2px solid blue;
+    text-align: center;
+ }
+ #bio,#hobbies,#schooling{
+    border: 1px solid purple;
+ }
+ #footer{
+    text-align: center;
+ }
+ h2{
+    text-align: center
+ }
