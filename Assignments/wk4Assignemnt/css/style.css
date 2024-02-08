@@ -1,0 +1,154 @@
+
+h1 {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+}
+h2{
+    height: 27px;
+}
+
+#Container {
+    width: 1000px;
+    height: 800px;
+    border: 2px solid black;
+    background-color: azure;
+}
+
+#ContainerCast {
+    width: 1000px;
+    height: 600px;
+    border: 2px solid black;
+    background-color: azure;
+}
+
+#ContainerReview {
+    width: 1000px;
+    height: 898px;
+    border: 2px solid black;
+    background-color: azure;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    background-color: cadetblue;
+    background-image: linear-gradient(white, black);
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 1050px;
+}
+
+#Nav {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.nav-list {
+    list-style: none;
+    display: inline;
+    text-align: center;
+    padding: 15px;
+}
+
+#Header {
+    border: 2px solid black;
+    text-align: center;
+}
+
+#Content {
+    margin: auto;
+    border: 1px solid black;
+    height: 800 px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#ContentCast {
+    margin: auto;
+    border: 1px solid black;
+    height: 1000 px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#info{
+    margin: auto;
+    height: 450px;
+    text-align: left;
+}
+
+#Footer {
+    border: 1px solid black;
+    text-align: center;
+    margin-top: auto;
+    background-color: white;
+}
+
+.section-text {
+    width: 750px;
+    padding-right: 5px;
+}
+
+.gallery {
+    margin-bottom: 50;
+    border: solid black;
+    text-align: center;
+}
+
+#contact-form {
+    width: 500px;
+    margin: auto;
+}
+
+.videos {
+    margin: 0 auto 150px;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: red;
+}
+
+table {
+    border: 1 px solid black;
+    width: 700px;
+    margin: 150px;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+}
+
+.table-data tr:nth-child(odd) {
+    background-color: aqua;
+}
+
+.cast {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    gap: 8px;
+    padding: 0;
+}
+
+#info-and-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#poster {
+    width: 20%;
+}

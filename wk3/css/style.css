@@ -85,3 +85,16 @@ a:visited{
 a:active{
     color: red;
 }
+table{
+    border: 1 px solid black;
+    width: 700px;
+    margin: 150px;
+    border-collapse: collapse;
+
+}
+td{
+    border: 1px solid black;
+}
+.table-data tr:nth-child(odd){
+    background-color: aqua;
+}
