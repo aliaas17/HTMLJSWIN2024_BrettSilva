@@ -26,10 +26,29 @@
             <li class="nav-list"><a href="./Assignments/wk4Assignemnt/index.html">wk4A</a></li>
             <li class="nav-list"><a href="https://www.youtube.com/@logahauntis">logahauntis</a></li>
 
-            <script src="/brett.js"></script>
 
             yoyo fartttttt
         </ul>
+        <br>
+        <br>
+        <p>
+            <script>
+                //defining variables
+                var tax=.2
+                var grossPay=prompt("What is your Gross pay?")
+                Number(grossPay)
+                var taxedPay=tax*grossPay
+                var netPay=grossPay-taxedPay
+
+                //output
+                console.log("Gross Pay:",grossPay)
+                console.log("\nTaxes:",taxedPay)
+                console.log("\nNet Pay:",netPay)
+
+                document.write("Gross Pay:",grossPay,"\nTaxes:",taxedPay,"\nNet Pay:",netPay)
+                document.querySelector('ul').innerHTML=grossPay,taxedPay,netPay
+            </script>
+        </p>
     </div>
     </body>
     </html>

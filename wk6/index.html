@@ -1,0 +1,57 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS LAB</title>
+    </head>
+    <body>
+        <h1>Week 6 Class Lab</h1>
+        <p></p>
+
+        <button>Call Function</button>
+        <script>
+            var firstNamr="BRett"
+            var lastName="Silva"
+            var message="yo"            
+            var para="lorem ipsum"
+
+
+            //alert(firstNamr+" "+lastName)
+
+            console.log(`Hello ${firstNamr} ${lastName}!`)
+
+            function outputToPage(tag, msg, color){
+                document.querySelector(tag).innerHTML=msg
+                document.querySelector(tag).style.color=color
+            }
+
+            outputToPage("h1", message, "blue")
+            outputToPage("p", para, "green")
+
+            var dataPromptButton=document.querySelector("Button")
+            dataPromptButton.addEventListener('click', dataPrompt)
+
+            function dataPrompt(){
+                alert(`My name is ${firstNamr} welcome`)
+                var yourName= prompt("PLease tell me your name")
+                alert(`Hello ${yourName}!`)
+                var yourLastName=prompt("Enter last name")
+                alert(`Your full name=${yourName} ${yourLastName}`)
+
+                var num1=prompt("enter first number.")
+                var num2=prompt("enter second number")
+
+                var result=Number(num1)*Number(num2)
+
+                alert(`Here is your result: ${result}`)
+
+                var documentBody=document.querySelector("body")
+                var outputData=document.createElement("p")
+                outputData.innerHTML=`Your Name is ${yourName} ${yourLastName}<br> The resuklt of your numbers is ${result}<br>Thanks from ${firstNamr} ${lastName}`
+                documentBody.appendChild(outputData)
+            }
+        </script>
+        
+    </body>
+    </html>
