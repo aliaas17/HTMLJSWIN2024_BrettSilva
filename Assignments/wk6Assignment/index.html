@@ -1,0 +1,22 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var hourlyPay= Number(prompt("Enter hourly: "))
+            var hoursWeek= Number(prompt("Enter Week: "))
+            var tax= Number(prompt("Enter Tax Rate: "))
+            var tax= parseFloat(tax/100)
+            var grossPay=hourlyPay*hoursWeek
+            var taxes=grossPay*tax
+            var netPay=grossPay-taxes
+            console.log("gross pay:",grossPay,"\n","taxes:",taxes,"\n","net pay:",netPay)
+            alert(`gross pay: ${grossPay}\ntaxes: ${taxes}\nnet pay: ${netPay}`)
+        </script>
+    
+    </body>
+    </html>
