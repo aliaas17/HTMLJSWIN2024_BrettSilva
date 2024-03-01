@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 <body>
 
@@ -20,41 +20,27 @@
 
     <script>
         function execute(){
-            var num1 = parseFloat(document.getElementById("num1").value)
-            var num2 = parseFloat(document.getElementById("num2").value)
-            var operator = document.getElementById("operation").value
-            var result = 0
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var operator = document.getElementById("operation").value;
+            var result = operate(num1, num2, operator);
 
-            if (operator == "1"){
-                result = addition(num1, num2)
-            }
-            else if (operator == "2"){
-                result = subtraction(num1, num2)
-            }
-            else if (operator == "3"){
-                result = multiplication(num1, num2)
-            }
-            else if (operator == "4"){
-                result = division(num1, num2)
-            }
-
-            document.getElementById("resultDisplay").textContent = "= " + result
+            document.getElementById("resultDisplay").textContent = "= " + result;
         }
 
-        function addition(num1, num2){
-            return num1 + num2
-        }
-
-        function subtraction(num1, num2){
-            return num1 - num2
-        }
-
-        function multiplication(num1, num2){
-            return num1 * num2
-        }
-
-        function division(num1, num2){
-            return num1 / num2
+        function operate(num1, num2, operation) {
+            switch (operation) {
+                case '1':
+                    return num1 + num2;
+                case '2':
+                    return num1 - num2;
+                case '3':
+                    return num1 * num2;
+                case '4':
+                    return num1 / num2;
+                default:
+                    return 'Invalid operation';
+            }
         }
     </script>
 

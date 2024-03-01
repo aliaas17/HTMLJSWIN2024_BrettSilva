@@ -1,0 +1,154 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var cars=new Array();
+            cars[0]="toyota"
+            cars[1]="mazda"
+            cars[2]="honda"
+            cars[3]="nissan"
+            cars[4]="chevy"
+            cars[5]="lexus"
+            cars[6]="ferrari"
+            console.log(cars)
+            console.log(cars[2])
+            var page=document.querySelector("body")
+
+            for(let i=0; i<cars.length; i++){
+                console.log(cars[i])
+                page.innerHTML += `<p>${cars[i]}</p>`
+            }
+
+            var people=[
+                "Jordan",
+                "Matt",
+                "Mason",
+                "Joe",
+                "Gill",
+                "Nate"]
+
+            //people.push("Jaz")
+            //people.splice(2,2)
+            //console.log(people)
+
+            var peopleColors=[
+                "red",
+                "green",
+                "purple",
+                "orange",
+                "blue",
+                "purple"
+            ]
+
+            for(let i=0; i<people.length; i++){
+                console.log(`${people[i]}'s favorite color is ${peopleColors[i]}`)
+            }
+
+            var sportsTeams=[]
+            sportsTeams["Baseball"]="Red Sox"
+            sportsTeams["Hockey"]="Bruins"
+            sportsTeams["Basketball"]="Celtics"
+            sportsTeams["Football"]="Patriots"
+            sportsTeams["Futbol"]="Revolution"
+
+            console.log(sportsTeams["Hockey"])
+
+            var peopleAndColors=[]
+            peopleAndColors[0]=people
+            peopleAndColors[1]=peopleColors
+
+            for(let i=0; i<people.length; i++){
+                console.log(peopleAndColors[0][i],peopleAndColors[1][i])
+            }
+
+            var marioCharcter1={
+                name:"mario",
+                occupation:"plumber",
+                color:"red",
+                hasMustache:true,
+                hasSibling:true,
+                hasHat:true,
+                jumpHeight:10,
+                sayHello:function(){console.log(`My name is ${this.name}`)}
+            }
+
+            var marioCharcter2={
+                name:"luigi",
+                occupation:"plumber",
+                color:"green",
+                hasMustache:true,
+                hasSibling:true,
+                hasHat:true,
+                jumpHeight:12,
+                sayHello:function(){console.log(`My name is ${this.name}`)}
+            }
+
+            var marioCharcter3={
+                name:"peach",
+                occupation:"princess",
+                color:"pink",
+                hasMustache:false,
+                hasSibling:false,
+                hasHat:true,
+                jumpHeight:8,
+                sayHello:function(){console.log(`My name is ${this.name}`)}
+            }
+
+            var marioCharcter4={
+                name:"yoshi",
+                occupation:"dinosaur",
+                color:"green",
+                hasMustache:false,
+                hasSibling:true,
+                hasHat:false,
+                jumpHeight:20,
+                sayHello:function(){console.log(`My name is ${this.name}`)}
+            }
+
+            var marioCharcter5={
+                name:"toad",
+                occupation:"servant",
+                color:"white",
+                hasMustache:false,
+                hasSibling:true,
+                hasHat:false,
+                jumpHeight:3,
+                sayHello:function(){console.log(`My name is ${this.name}`)}
+            }
+
+            var marioCharcter6={
+                name:"bowser",
+                occupation:"dictator",
+                color:"yellow",
+                hasMustache:false,
+                hasSibling:false,
+                hasHat:false,
+                jumpHeight:50,
+                sayHello:function(){console.log(`My name is ${this.name}`)}
+            }
+
+            var characters=[
+                marioCharcter1,
+                marioCharcter2,
+                marioCharcter3,
+                marioCharcter4,
+                marioCharcter5,
+                marioCharcter6]
+
+            for(let key in characters){
+                console.log(characters[key].name,characters[key].occupation)
+                characters[key].sayHello()
+            }
+
+            characters.forEach(function(item, character){
+                page.innerHTML+=`<p> ${item.name}, ${item.occupation}, ${item.hasMustache}</p>`
+            })
+        </script>
+        
+    </body>
+    </html>

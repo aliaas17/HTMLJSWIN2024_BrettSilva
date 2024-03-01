@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--edit the meta tag below to hold YOUR name!-->
+    <meta name="author" content="__YOUR NAME HERE!__">
+    <meta name="description" content="Week 7 Assignment practicing Javascript & HTML">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>Week 7 | Pay Form Calculator Assignment</title>
+</head>
+
+<body>
+
+    <!--title of the page-->
+    <h1> Pay Calculator Form </h1>
+
+    <!--start of the form-->
+    <!--each <input> must have an id that matches its corresponding label -->
+    <!--each form element is separated by a break space (new line) -->
+    <form>
+        <table>
+            <tr>
+                <td><label for="first">First Name: </label></td>
+                <td><input type="name" required="" maxlength="20" name="fName" id="fName" placeholder="First Name"></td>
+            </tr>
+            <tr>
+                <td><label for="last">Last Name: </label></td>
+                <td><input type="name" required="" maxlength="20" name="lName" id="lName" placeholder="Last Name"></td>
+            </tr>
+            <tr>
+                <td><label for="hours">Hours Worked: </label></td>
+                <td><input type="worked" required="" maxlength="20" name="worked" id="worked"
+                        placeholder="Hours Worked"></td>
+            </tr>
+            <tr>
+                <td><label for="rate">Hourly Rate: </label></td>
+                <td><input type="Rate" required="" maxlength="20" name="rate" id="rate" placeholder="Hourly Rate"></td>
+            </tr>
+        </table>
+
+        <p style="width: 280.73px; text-align: center;"><input type="button" id="" value="Enter" onclick="execute()">
+        </p>
+
+        <div id="final" style="border:1px solid rgb(87, 86, 86); padding:15px; background-color:rgb(168, 168, 168);">
+
+            <h3>Employee(s) Info: </h3>
+            <p id="info" style="font-family:Courier New, monospace;"><i>Information will be loaded once above form is
+                    filled.</i></p>
+
+            <table id="outputTable" style="font-family:Courier New, monospace; width:250 px; text-align:left;">
+                <tr>
+                    <td>Name</td>
+                    <td>Gross Pay</td>
+                    <td>Taxes</td>
+                    <td>Net Pay</td>
+                </tr>
+                <tr>
+                    <td id="outputName"></td>
+                    <td id="outputPay"></td>
+                    <td id="outputTaxes"></td>
+                    <td id="outputNet"></td>
+                </tr>
+
+            </table>
+        </div>
+
+        <br>
+        <br>
+
+        <h3><i>If the above information is correct, please press "SUBMIT"</i></h3>
+        <input type="button" id="submit" value="SUBMIT" onclick="submitNow()">
+    </form>
+
+    <script>
+        // Edit the below statement to select the #enter-button id from the HTML file
+        var index = 0;
+        var hoursWorkeds = []
+        var rates = []
+        var fullNames = []
+        var grossPays = []
+        var taxesArray = []
+        var netPays = []
+
+        const money = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+        })
+
+        function execute() {
+            // Define/calculate variables
+            var fName = document.getElementById("fName").value
+            var lName = document.getElementById("lName").value
+            var fullName = fName + " " + lName
+            var hoursWorked = parseFloat(document.getElementById("worked").value)
+            var rate = parseFloat(document.getElementById("rate").value)
+            var result = hoursWorked * rate
+            var taxes = result * .2
+            var netPay = result - taxes
+
+            // Append arrays
+            hoursWorkeds.push(hoursWorked)
+            rates.push(rate)
+            fullNames.push(fullName)
+            grossPays.push(result)
+            taxesArray.push(taxes)
+            netPays.push(netPay)
+
+            // Add new cells/rows
+            var table = document.getElementById("outputTable")
+            var row = table.insertRow(-1); // Insert row at the end
+            var cell1 = row.insertCell(0)
+            var cell2 = row.insertCell(1)
+            var cell3 = row.insertCell(2)
+            var cell4 = row.insertCell(3)
+
+
+            // Loop through the arrays
+            for (let i = 0; i < fullNames.length; i++) {
+                cell1.innerHTML = `${fullNames[i]}`
+                cell2.innerHTML = `${money.format(grossPays[i])}`
+                cell3.innerHTML = `${money.format(taxesArray[i])}`
+                cell4.innerHTML = `${money.format(netPays[i])}`
+                console.log(`${fullNames[i]} ${grossPays[i]}`)
+            }
+
+            // Increment index
+            index++
+
+            // Display last added data outside loop
+            document.getElementById("outputName").textContent = `${fullNames[fullNames.length - 1]}`
+            document.getElementById("outputPay").textContent = `${money.format(grossPays[grossPays.length - 1])}`
+            document.getElementById("outputTaxes").textContent = `${money.format([taxesArray.length - 1])}`
+            document.getElementById("outputNet").textContent = `${money.format(netPays[grossPays.length - 1])}`
+
+            var arrayList=[hoursWorkeds,rates,fullNames, grossPays,taxesArray,netPays]
+            return arrayList
+
+        }
+        var arrayList
+
+        function submitNow() {
+            // Call execute function to populate the arrays if not already populated
+            if (!arrayList) {
+                arrayList=execute();
+            }
+            
+            for (let i = 0; i < arrayList[2].length; i++) {
+                alert(`${arrayList[2][i]}\nHOURS: ${arrayList[0][i]}\nRATE: $${arrayList[1][i]}\n\nGROSS PAY: $${arrayList[3][i]}\nTAX AMOUNT: $${arrayList[4][i]}\nNET PAY: $${arrayList[5][i]}`)
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
