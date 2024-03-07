@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BomandDomLab</title>
+</head>
+
+<body>
+    <h1>BOMDOMLAB WK9</h1>
+    <div id="output"></div>
+    <script>
+        var header=document.querySelector('h1')
+        var div = document.querySelector(`#output`)
+        var p = document.createElement(`p`);
+        p.setAttribute(`id`, `some-id`)
+        var text = document.createTextNode(`This is text inside of the p tag`)
+        p.appendChild(text)
+        div.appendChild(p)
+
+        div.addEventListener(`click`, function () {
+            e.target.removeChild(p)
+        })
+    </script>
+
+</body>
+
+</html>

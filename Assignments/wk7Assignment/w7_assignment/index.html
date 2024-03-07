@@ -83,6 +83,7 @@
         var taxesArray = []
         var netPays = []
 
+        //money formatting
         const money = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'USD',
@@ -134,20 +135,18 @@
             document.getElementById("outputTaxes").textContent = `${money.format([taxesArray.length - 1])}`
             document.getElementById("outputNet").textContent = `${money.format(netPays[grossPays.length - 1])}`
 
-            var arrayList=[hoursWorkeds,rates,fullNames, grossPays,taxesArray,netPays]
+            let arrayList=[hoursWorkeds,rates,fullNames, grossPays,taxesArray,netPays]
             return arrayList
 
         }
-        var arrayList
+        
 
-        function submitNow() {
+        function submitNow(arrayList) {
             // Call execute function to populate the arrays if not already populated
-            if (!arrayList) {
-                arrayList=execute();
-            }
+            let arrayList = execute();
             
             for (let i = 0; i < arrayList[2].length; i++) {
-                alert(`${arrayList[2][i]}\nHOURS: ${arrayList[0][i]}\nRATE: $${arrayList[1][i]}\n\nGROSS PAY: $${arrayList[3][i]}\nTAX AMOUNT: $${arrayList[4][i]}\nNET PAY: $${arrayList[5][i]}`)
+                alert(`${arrayList[2][i]}\nHOURS: ${arrayList[0][i]}\nRATE: ${money.format(arrayList[1][i])}\n\nGROSS PAY: ${money.format(arrayList[3][i])}\nTAX AMOUNT: ${money.format(arrayList[4][i])}\nNET PAY: ${money.format(arrayList[5][i])}`)
             }
         }
 
