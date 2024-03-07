@@ -94,11 +94,9 @@
                         // Loop through each property in the object
                         for (key in people[i]) {
                             let p = document.createElement("p");
-                            let hr = document.createElement("hr")
                             p.innerText = key.toUpperCase() + ": " + people[i][key]
                             console.log(key.toUpperCase() + ": " + people[i][key])
                             document.getElementById("output").appendChild(p)
-                            document.body.appendChild(hr)
                         }
                     }
                 }
