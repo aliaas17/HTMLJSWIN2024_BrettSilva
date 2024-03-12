@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Week 2 Files</title>
+	<style type="text/css">
+		div {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<p id="output"></p>
+</body>
+
+<script type="text/javascript">
+	//Use this Array of objects to complete the assignment.
+	var people = [
+		{ first: "Jason", last: "Vorhees", credit: "Friday the 13th" },
+		{ first: "Freddy", last: "Krueger", credit: "A Nightmare on Elm Street" },
+		{ first: "Roger", last: "Rabbit", credit: "Who Framed Roger Rabbit" },
+		{ first: "Kevin", last: "McCallister", credit: "Home Alone" },
+		{ first: "Godzilla", last: "King of The Monsters", credit: "Godzilla" },
+		{ first: "Buzz", last: "Lightyear", credit: "Toy Story" },
+		{ first: "Marion", last: "Cobretti", credit: "Cobra" }
+	]
+	for (let i = 0; i < 7; i++) {
+		let d = document.createElement("div")
+		d.setAttribute("id", `div${i}`)
+		document.body.appendChild(d)
+		
+		let p = document.createElement("p")
+		p.setAttribute("id", "outputs")
+		p.innerText = people[i]['first'] + "\n" + people[i]['last'] + "\n" + people[i]['credit']
+		document.getElementById(`div${i}`).appendChild(p)
+
+		//let h = document.createElement("hr")
+		//document.getElementById(`div${i}`).appendChild(h)
+
+		console.log(i + ": " + people[i]['first'] + " " + people[i]['last'] + "\n" + people[i]['credit'])		
+
+	}
+
+</script>
+
+</html>
